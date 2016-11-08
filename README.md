@@ -1,1 +1,1 @@
-# web-jeopardy
+# Web Jeopardy
