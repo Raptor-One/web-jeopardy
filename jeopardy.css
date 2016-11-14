@@ -1,0 +1,29 @@
+body {
+  font-family: arial black;
+  background-color: #eee;
+}
+
+#h1 {
+  text-align: center;
+  font-size: 50px;
+  color: red;
+  text-decoration: underline;
+}
+
+#game-board {
+  border: solid black 5px;
+  background-color: #20a;
+}
+
+.cat {
+  color: white;
+  border: solid black 4px;
+  text-align: center;
+}
+
+.money {
+  font-size: 30px;
+  text-align: center;
+  color: #da0;
+  border: solid black 4px;
+}
