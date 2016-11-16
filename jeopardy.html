@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Jeopardy</title>
-    <link rel="stylesheet" text/css href="jeopardy.css">
+    <link rel="stylesheet" type="text/css" href="jeopardy.css">
     <script src="jeopardy.js"></script>
 </head>
 <body>
@@ -49,7 +49,7 @@
             <tr>
               <td id="c1r4" class="money">$800</td>
               <td id="c2r4" class="money">$800</td>
-              <td id="c2r4" class="money">$800</td>
+              <td id="c3r4" class="money">$800</td>
               <td id="c4c4" class="money">$800</td>
               <td id="c5r4" class="money">$800</td>
               <td id="c6r4" class="money">$800</td>
@@ -67,7 +67,10 @@
       </div>
     </div>
     <div id="question-outer-div">
-      <p>nothing for now...</p>
+      <p id="info-text">nothing for now...</p>
+      <textarea id="game-input">
+      </textarea>
+      <a onclick="loadGameFromText('game-input')">LOAD</a>
     </div>
 </body>
 </html>
