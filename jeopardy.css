@@ -4,7 +4,8 @@ body {
 }
 
 #question-outer-div {
-  /*display: none;*/
+  text-align: center;
+  color: #da0;
 }
 
 #h1 {
