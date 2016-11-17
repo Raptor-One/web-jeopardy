@@ -1,8 +1,8 @@
 /**
  * Created by philip on 2016-11-08.
  */
-var NUMBER_OF_COLUMNS = 1;
-var NUMBER_OF_ROWS = 1;
+var NUMBER_OF_COLUMNS = 6;
+var NUMBER_OF_ROWS = 5;
 var moduleDictionary = {};
 
 
@@ -41,7 +41,9 @@ function activateEventListeners() {
     for(var i = 0; i < modules.length; i++)
     {
         modules[i].addEventListener("click", function () {
-
+            document.getElementById("game-board-outer-div").style.display = 'none';
+            document.getElementById("question-outer-div").style.display = 'block';
+            document.getElementById("info-text").innerHTML = moduleDictionary[{c: this.id.charAt(1), r: this.id.charAt(3)}].a;
         })
     }
 
