@@ -1,6 +1,8 @@
+
 body {
   font-family: arial black;
-  background-color: #eee;
+  background-color: #333;
+  width: 100%;
 }
 
 #question-outer-div {
@@ -17,7 +19,7 @@ body {
 
 #game-board {
   border: solid black 5px;
-  background-color: #20a;
+  background-color: #00f;
 }
 
 .cat {
@@ -29,6 +31,6 @@ body {
 .money {
   font-size: 30px;
   text-align: center;
-  color: #da0;
+  color: #fd0;
   border: solid black 4px;
 }

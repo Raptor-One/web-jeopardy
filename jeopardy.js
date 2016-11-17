@@ -1,8 +1,8 @@
 /**
  * Created by philip on 2016-11-08.
  */
-var NUMBER_OF_COLUMNS = 6;
-var NUMBER_OF_ROWS = 5;
+var NUMBER_OF_COLUMNS = 1;
+var NUMBER_OF_ROWS = 1;
 var moduleDictionary = {};
 
 
@@ -14,8 +14,12 @@ function loadGameFromText(id) {
 
     if (categories.length == NUMBER_OF_COLUMNS)
     {
+        var documentCategories = document.getElementsByClassName("cat");
+
         for(var c = 0; c < categories.length; c++)
         {
+            documentCategories[c].innerHTML = categories[c].getElementsByTagName("name")[0].innerHTML.replace(/\s\s+/g, ' ');
+
             var modules = categories[c].getElementsByTagName("module");
 
             if (modules.length == NUMBER_OF_ROWS)
@@ -28,7 +32,7 @@ function loadGameFromText(id) {
         }
     }
 
-    if(Object.keys(moduleDictionary).length == 1)
+    if(Object.keys(moduleDictionary).length == NUMBER_OF_COLUMNS*NUMBER_OF_ROWS)
     {
         activateEventListeners();
         document.getElementById("info-text").innerHTML = "Game Board has been loaded :)";
@@ -44,8 +48,15 @@ function activateEventListeners() {
             document.getElementById("game-board-outer-div").style.display = 'none';
             document.getElementById("question-outer-div").style.display = 'block';
             document.getElementById("info-text").innerHTML = moduleDictionary[{c: this.id.charAt(1), r: this.id.charAt(3)}].a;
+            document.addEventListener("dblclick", returnToGameBoard);
         })
     }
 
+}
+
+function returnToGameBoard() {
+    document.getElementById("game-board-outer-div").style.display = 'block';
+    document.getElementById("question-outer-div").style.display = 'none';
+    document.removeEventListener("dblclick", returnToGameBoard);
 }
 
