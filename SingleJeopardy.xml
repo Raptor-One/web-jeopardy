@@ -1,0 +1,74 @@
+<game-board>
+  <!-- Set points for game-board -->
+  <points>$200</points>
+  <points>$400</points>
+  <points>$600</points>
+  <points>$800</points>
+  <points>$1000</points>
+ <!-- 1st category -->
+  <category>
+    <name>
+    </name>
+    <module>
+      <answer>
+      </answer>
+      <question>
+      </question>
+    </module>
+  </category>
+<!-- 2nd category -->
+  <category>
+    <name>
+    </name>
+    <module>
+      <answer>
+      </answer>
+      <question>
+      </question>
+    </module>
+  </category>
+  <!-- 3rd category -->
+  <category>
+    <name>
+    </name>
+    <module>
+      <answer>
+      </answer>
+      <question>
+      </question>
+    </module>
+  </category>
+  <!-- 4th category -->
+  <category>
+    <name>
+    </name>
+    <module>
+      <answer>
+      </answer>
+      <question>
+      </question>
+    </module>
+  </category>
+  <!-- 5th category -->
+  <category>
+    <name>
+    </name>
+    <module>
+      <answer>
+      </answer>
+      <question>
+      </question>
+    </module>
+  </category>
+  <!-- 6th category -->
+  <category>
+    <name>
+    </name>
+    <module>
+      <answer>
+      </answer>
+      <question>
+      </question>
+    </module>
+  </category>
+</game-board>
