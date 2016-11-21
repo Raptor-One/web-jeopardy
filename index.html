@@ -2,75 +2,80 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Jeopardy</title>
+    <title>Web Jeopardy</title>
     <link rel="stylesheet" type="text/css" href="jeopardy.css">
     <script src="jeopardy.js"></script>
 </head>
 <body>
-    <div id="game-board-outer-div">
-      <div>
+<div id="intro-div">
+    <img src="web-jeopardy-logo.png">
+    <p>SETUP</p>
+    <p>Paste game-board below or upload file</p>
+    <input type="file" multiple size="50" onchange="loadTextFromFile(this)">
+    <textarea rows="5" cols="100" id="game-input"></textarea>
+    <a onclick="loadGameFromText('game-input')">LOAD</a>
+</div>
+<div id="game-board-outer-div">
+    <div>
         <h1 id="h1">JEOPARDY!!!</h1>
-      </div>
-      <div>
+    </div>
+    <div>
         <table id="game-board">
-          <tbody>
+            <tbody>
             <tr>
-              <th class="cat">To Be Deternined</th>
-              <th class="cat">To Be Deternined</th>
-              <th class="cat">To Be Deternined</th>
-              <th class="cat">To Be Deternined</th>
-              <th class="cat">To Be Deternined</th>
-              <th class="cat">To Be Deternined</th>
+                <th class="cat">To Be Deternined</th>
+                <th class="cat">To Be Deternined</th>
+                <th class="cat">To Be Deternined</th>
+                <th class="cat">To Be Deternined</th>
+                <th class="cat">To Be Deternined</th>
+                <th class="cat">To Be Deternined</th>
             </tr>
             <tr>
-              <td id="c1r1" class="money">$200</td>
-              <td id="c2r1" class="money">$200</td>
-              <td id="c3r1" class="money">$200</td>
-              <td id="c4r1" class="money">$200</td>
-              <td id="c5r1" class="money">$200</td>
-              <td id="c6r1" class="money">$200</td>
+                <td id="c1r1" class="money">$200</td>
+                <td id="c2r1" class="money">$200</td>
+                <td id="c3r1" class="money">$200</td>
+                <td id="c4r1" class="money">$200</td>
+                <td id="c5r1" class="money">$200</td>
+                <td id="c6r1" class="money">$200</td>
             </tr>
             <tr>
-              <td id="c1r2" class="money">$400</td>
-              <td id="c2r2" class="money">$400</td>
-              <td id="c3r2" class="money">$400</td>
-              <td id="c4r2" class="money">$400</td>
-              <td id="c5r2" class="money">$400</td>
-              <td id="c6r2" class="money">$400</td>
+                <td id="c1r2" class="money">$400</td>
+                <td id="c2r2" class="money">$400</td>
+                <td id="c3r2" class="money">$400</td>
+                <td id="c4r2" class="money">$400</td>
+                <td id="c5r2" class="money">$400</td>
+                <td id="c6r2" class="money">$400</td>
             </tr>
             <tr>
-              <td id="c1r3" class="money">$600</td>
-              <td id="c2r3" class="money">$600</td>
-              <td id="c3r3" class="money">$600</td>
-              <td id="c4r3" class="money">$600</td>
-              <td id="c5r3" class="money">$600</td>
-              <td id="c6r3" class="money">$600</td>
+                <td id="c1r3" class="money">$600</td>
+                <td id="c2r3" class="money">$600</td>
+                <td id="c3r3" class="money">$600</td>
+                <td id="c4r3" class="money">$600</td>
+                <td id="c5r3" class="money">$600</td>
+                <td id="c6r3" class="money">$600</td>
             </tr>
             <tr>
-              <td id="c1r4" class="money">$800</td>
-              <td id="c2r4" class="money">$800</td>
-              <td id="c3r4" class="money">$800</td>
-              <td id="c4c4" class="money">$800</td>
-              <td id="c5r4" class="money">$800</td>
-              <td id="c6r4" class="money">$800</td>
+                <td id="c1r4" class="money">$800</td>
+                <td id="c2r4" class="money">$800</td>
+                <td id="c3r4" class="money">$800</td>
+                <td id="c4c4" class="money">$800</td>
+                <td id="c5r4" class="money">$800</td>
+                <td id="c6r4" class="money">$800</td>
             </tr>
             <tr>
-              <td id="c1r5" class="money">$1000</td>
-              <td id="c2r5" class="money">$1000</td>
-              <td id="c3r5" class="money">$1000</td>
-              <td id="c4r5" class="money">$1000</td>
-              <td id="c5r5" class="money">$1000</td>
-              <td id="c6r5" class="money">$1000</td>
+                <td id="c1r5" class="money">$1000</td>
+                <td id="c2r5" class="money">$1000</td>
+                <td id="c3r5" class="money">$1000</td>
+                <td id="c4r5" class="money">$1000</td>
+                <td id="c5r5" class="money">$1000</td>
+                <td id="c6r5" class="money">$1000</td>
             </tr>
-          </tbody>
+            </tbody>
         </table>
-      </div>
     </div>
-    <div id="question-outer-div">
-      <p id="info-text">nothing for now...</p>
-      <textarea rows="5" cols="100" id="game-input">
-      </textarea>
-      <a onclick="loadGameFromText('game-input')">LOAD</a>
-    </div>
+</div>
+<div id="question-outer-div">
+    <p id="info-text">nothing for now...</p>
+</div>
 </body>
 </html>

@@ -2,7 +2,7 @@
  * Created by philip on 2016-11-08.
  */
 var NUMBER_OF_COLUMNS = 1;
-var NUMBER_OF_ROWS = 1;
+var NUMBER_OF_ROWS = 2;
 var moduleDictionary = {};
 
 
@@ -18,7 +18,7 @@ function loadGameFromText(id) {
 
         for(var c = 0; c < categories.length; c++)
         {
-            documentCategories[c].innerHTML = categories[c].getElementsByTagName("name")[0].innerHTML.replace(/\s\s+/g, ' ');
+            documentCategories[c].innerHTML = categories[c].getElementsByTagName("name")[0].innerHTML.replace(/\n\s\s+/g, ' ');
 
             var modules = categories[c].getElementsByTagName("module");
 
@@ -26,7 +26,7 @@ function loadGameFromText(id) {
             {
                 for(var r = 0; r < modules.length; r++)
                 {
-                    moduleDictionary[{c: c, r: r}] = { a: modules[r].getElementsByTagName("answer")[0].innerHTML.replace(/\s\s+/g, ' '), q: modules[r].getElementsByTagName("question")[0].innerHTML.replace(/\s\s+/g, ' ')};
+                    moduleDictionary[(c+1)+''+(r+1)] = { "a": modules[r].getElementsByTagName("answer")[0].innerHTML.replace(/\n\s\s+/g, ' '), "q": modules[r].getElementsByTagName("question")[0].innerHTML.replace(/\n\s\s+/g, ' ')};
                 }
             }
         }
@@ -47,7 +47,7 @@ function activateEventListeners() {
         modules[i].addEventListener("click", function () {
             document.getElementById("game-board-outer-div").style.display = 'none';
             document.getElementById("question-outer-div").style.display = 'block';
-            document.getElementById("info-text").innerHTML = moduleDictionary[{c: this.id.charAt(1), r: this.id.charAt(3)}].a;
+            document.getElementById("info-text").innerHTML = moduleDictionary[this.id.charAt(1)+''+this.id.charAt(3)].a;
             document.addEventListener("dblclick", returnToGameBoard);
         })
     }
@@ -55,8 +55,29 @@ function activateEventListeners() {
 }
 
 function returnToGameBoard() {
+    document.getElementById("intro-div").style.display = 'none';
     document.getElementById("game-board-outer-div").style.display = 'block';
     document.getElementById("question-outer-div").style.display = 'none';
     document.removeEventListener("dblclick", returnToGameBoard);
+}
+
+function loadTextFromFile(elem){
+
+    if (!window.FileReader) {
+        alert('Your browser is not supported');
+        return false;
+    }
+    var input = elem;
+
+    // Create a reader object
+    var reader = new FileReader();
+    if (input.files.length) {
+        var textFile = input.files[0];
+        // Read the file
+        reader.readAsText(textFile);
+        reader.addEventListener('load', function(t){
+            document.getElementById("game-input").innerHTML = t.target.result;w
+        });
+    }
 }
 
