@@ -9,6 +9,35 @@
   <category>
     <name>
     </name>
+ <!-- 1st clue -->
+    <module>
+      <answer>
+      </answer>
+      <question>
+      </question>
+    </module>
+ <!-- 2nd clue -->
+    <module>
+      <answer>
+      </answer>
+      <question>
+      </question>
+    </module>
+ <!-- 3rd clue -->
+    <module>
+      <answer>
+      </answer>
+      <question>
+      </question>
+    </module>
+ <!-- 4th clue -->
+    <module>
+      <answer>
+      </answer>
+      <question>
+      </question>
+    </module>
+ <!-- 5th clue -->
     <module>
       <answer>
       </answer>
@@ -20,6 +49,35 @@
   <category>
     <name>
     </name>
+ <!-- 1st clue -->
+    <module>
+      <answer>
+      </answer>
+      <question>
+      </question>
+    </module>
+<!-- 2nd clue -->
+    <module>
+      <answer>
+      </answer>
+      <question>
+      </question>
+    </module>
+<!-- 3rd clue -->
+    <module>
+      <answer>
+      </answer>
+      <question>
+      </question>
+    </module>
+<!-- 4th clue -->
+    <module>
+      <answer>
+      </answer>
+      <question>
+      </question>
+    </module>
+<!-- 5th clue -->
     <module>
       <answer>
       </answer>
@@ -27,48 +85,164 @@
       </question>
     </module>
   </category>
-  <!-- 3rd category -->
-  <category>
-    <name>
-    </name>
-    <module>
-      <answer>
-      </answer>
-      <question>
-      </question>
-    </module>
-  </category>
+<!-- 3rd category -->
+    <category>
+      <name>
+      </name>
+ <!-- 1st clue -->
+      <module>
+        <answer>
+        </answer>
+        <question>
+        </question>
+      </module>
+  <!-- 2nd clue -->
+      <module>
+        <answer>
+        </answer>
+        <question>
+        </question>
+      </module>
+  <!-- 3rd clue -->
+      <module>
+        <answer>
+        </answer>
+        <question>
+        </question>
+      </module>
+  <!-- 4th clue -->
+      <module>
+        <answer>
+        </answer>
+        <question>
+        </question>
+      </module>
+  <!-- 5th clue -->
+      <module>
+        <answer>
+        </answer>
+        <question>
+        </question>
+      </module>
+    </category>
   <!-- 4th category -->
-  <category>
-    <name>
-    </name>
-    <module>
-      <answer>
-      </answer>
-      <question>
-      </question>
-    </module>
-  </category>
+    <category>
+      <name>
+      </name>
+ <!-- 1st clue -->
+      <module>
+        <answer>
+        </answer>
+        <question>
+        </question>
+      </module>
+ <!-- 2nd clue -->
+      <module>
+        <answer>
+        </answer>
+        <question>
+        </question>
+      </module>
+ <!-- 3rd clue -->
+      <module>
+        <answer>
+        </answer>
+        <question>
+        </question>
+      </module>
+ <!-- 4th clue -->
+      <module>
+        <answer>
+        </answer>
+        <question>
+        </question>
+      </module>
+ <!-- 5th clue -->
+      <module>
+        <answer>
+        </answer>
+        <question>
+        </question>
+      </module>
+    </category>
   <!-- 5th category -->
-  <category>
-    <name>
-    </name>
-    <module>
-      <answer>
-      </answer>
-      <question>
-      </question>
-    </module>
-  </category>
+    <category>
+      <name>
+      </name>
+ <!-- 1st clue -->
+      <module>
+        <answer>
+        </answer>
+        <question>
+        </question>
+      </module>
+ <!-- 2nd clue -->
+      <module>
+        <answer>
+        </answer>
+        <question>
+        </question>
+      </module>
+ <!-- 3rd clue -->
+      <module>
+        <answer>
+        </answer>
+        <question>
+        </question>
+      </module>
+ <!-- 4th clue -->
+      <module>
+        <answer>
+        </answer>
+        <question>
+        </question>
+      </module>
+ <!-- 5th clue -->
+      <module>
+        <answer>
+        </answer>
+        <question>
+        </question>
+      </module>
+    </category>
   <!-- 6th category -->
-  <category>
-    <name>
-    </name>
-    <module>
-      <answer>
-      </answer>
-      <question>
-      </question>
-    </module>
-  </category>
+    <category>
+      <name>
+      </name>
+ <!-- 1st clue -->
+      <module>
+        <answer>
+        </answer>
+        <question>
+        </question>
+      </module>
+ <!-- 2nd clue -->
+      <module>
+        <answer>
+        </answer>
+        <question>
+        </question>
+      </module>
+ <!-- 3rd clue -->
+      <module>
+        <answer>
+        </answer>
+        <question>
+        </question>
+      </module>
+<!-- 4th clue -->
+      <module>
+        <answer>
+        </answer>
+        <question>
+        </question>
+      </module>
+ <!-- 5th clue -->
+      <module>
+        <answer>
+        </answer>
+        <question>
+        </question>
+      </module>
+    </category>
 </game-board>
