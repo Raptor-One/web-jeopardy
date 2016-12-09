@@ -1,0 +1,290 @@
+<game-board>
+  <!-- Set points for game-board -->
+  <points>$400</points>
+  <points>$800</points>
+  <points>$1200</points>
+  <points>$1600</points>
+  <points>$2000</points>
+ <!-- 1st category -->
+  <category>
+    <name>
+      FRENCH
+    </name>
+ <!-- 1st clue -->
+    <module>
+      <answer>
+      </answer>
+      <question>
+      </question>
+    </module>
+ <!-- 2nd clue -->
+    <module>
+      <answer>
+      </answer>
+      <question>
+      </question>
+    </module>
+ <!-- 3rd clue -->
+    <module>
+      <answer>
+      </answer>
+      <question>
+      </question>
+    </module>
+ <!-- 4th clue -->
+    <module>
+      <answer>
+      </answer>
+      <question>
+      </question>
+    </module>
+ <!-- 5th clue -->
+    <module>
+      <answer>
+      </answer>
+      <question>
+      </question>
+    </module>
+  </category>
+<!-- 2nd category -->
+  <category>
+    <name>
+      MATHEMATICS
+    </name>
+ <!-- 1st clue -->
+    <module>
+      <answer>
+        a^2 + b^2 = c^2
+      </answer>
+      <question>
+        What is the Pythagorean Theorem?
+      </question>
+    </module>
+<!-- 2nd clue -->
+    <module>
+      <answer>
+        4/3(pi*r^3)
+      </answer>
+      <question>
+        What is the volume of a sphere?
+      </question>
+    </module>
+<!-- 3rd clue -->
+    <module>
+      <answer>
+        This ratio measures the length of the adjacent side of a right triangle to its hypotenuse
+      </answer>
+      <question>
+        What is the Cosine ratio?
+      </question>
+    </module>
+<!-- 4th clue -->
+    <module>
+      <answer>
+        This work area is used in modern day graphing
+      </answer>
+      <question>
+        What is the Cartesian Coordinate Plane?
+      </question>
+    </module>
+<!-- 5th clue -->
+    <module>
+      <answer>
+        This system of counting has a base of 16 and uses letters A, B, C, D, E, and F
+      </answer>
+      <question>
+        What is the Hexadecimal system?
+      </question>
+    </module>
+  </category>
+<!-- 3rd category -->
+    <category>
+      <name>
+        SOCIAL STUDIES
+      </name>
+ <!-- 1st clue -->
+      <module>
+        <answer>
+        </answer>
+        <question>
+        </question>
+      </module>
+  <!-- 2nd clue -->
+      <module>
+        <answer>
+          The British North America Act (BNA Act) was passed on this day, bringing forth Confederation.
+        </answer>
+        <question>
+          What is July 1, 1867?
+        </question>
+      </module>
+  <!-- 3rd clue -->
+      <module>
+        <answer>
+          On October 31, 1517, Martin Luther posted this document, stating all the wrong things about the Catholic Church
+        </answer>
+        <question>
+          What are the 95 Theses?
+        </question>
+      </module>
+  <!-- 4th clue -->
+      <module>
+        <answer>
+        </answer>
+        <question>
+        </question>
+      </module>
+  <!-- 5th clue -->
+      <module>
+        <answer>
+        </answer>
+        <question>
+        </question>
+      </module>
+    </category>
+  <!-- 4th category -->
+    <category>
+      <name>
+        CHEM/PHYS/BIO
+      </name>
+ <!-- 1st clue -->
+      <module>
+        <answer>
+          This organelle in a plant or animal cell is known as the "powerhouse" of the cell
+        </answer>
+        <question>
+          What is the Mitochondrion(a)?
+        </question>
+      </module>
+ <!-- 2nd clue -->
+      <module>
+        <answer>
+          Deoxyribonucleic Acid
+        </answer>
+        <question>
+          What is DNA?
+        </question>
+      </module>
+ <!-- 3rd clue -->
+      <module>
+        <answer>
+          The which electromagnetic radiation is classified
+        </answer>
+        <question>
+          What is the Electromagnetic Spectrum?
+        </question>
+      </module>
+ <!-- 4th clue -->
+      <module>
+        <answer>
+          A simple diagram that outlines the protons, neutrons, and electrons in an atom or ion
+        </answer>
+        <question>
+          What is a Bohr Diagram?
+        </question>
+      </module>
+ <!-- 5th clue -->
+      <module>
+        <answer>
+          The chemical name for water
+        </answer>
+        <question>
+          What is Dihydrogen Oxide?
+        </question>
+      </module>
+    </category>
+  <!-- 5th category -->
+    <category>
+      <name>
+        ENGLISH
+      </name>
+ <!-- 1st clue -->
+      <module>
+        <answer>
+          This statement contains the theme and plan of development for the rest of the essay. Usually found at the end of the Introductory paragrah.
+        </answer>
+        <question>
+          What is the Thesis Statement?
+        </question>
+      </module>
+ <!-- 2nd clue -->
+      <module>
+        <answer>
+          The character standing in opposition to the protagonist in a story
+        </answer>
+        <question>
+          What is the Antagonist?
+        </question>
+      </module>
+ <!-- 3rd clue -->
+      <module>
+        <answer>
+          In Skakespearean Times, this type of play had a happy ending.
+        </answer>
+        <question>
+          What is a Comedy?
+        </question>
+      </module>
+ <!-- 4th clue -->
+      <module>
+        <answer>
+          A nice way to say a bad thing
+        </answer>
+        <question>
+          What is a Euphemism?
+        </question>
+      </module>
+ <!-- 5th clue -->
+      <module>
+        <answer>
+          Any literature that ridicules vices and follies. In other words, anything that makes fun of immorality and foolishness.
+        </answer>
+        <question>
+          What is a Satire?
+        </question>
+      </module>
+    </category>
+  <!-- 6th category -->
+    <category>
+      <name>
+        #JokesOnYou
+      </name>
+ <!-- 1st clue -->
+      <module>
+        <answer>
+        </answer>
+        <question>
+        </question>
+      </module>
+ <!-- 2nd clue -->
+      <module>
+        <answer>
+          When a king farts
+        </answer>
+        <question>
+          What is Noble Gas?
+        </question>
+      </module>
+ <!-- 3rd clue -->
+      <module>
+        <answer>
+        </answer>
+        <question>
+        </question>
+      </module>
+<!-- 4th clue -->
+      <module>
+        <answer>
+        </answer>
+        <question>
+        </question>
+      </module>
+ <!-- 5th clue -->
+      <module>
+        <answer>
+        </answer>
+        <question>
+        </question>
+      </module>
+    </category>
+</game-board>
