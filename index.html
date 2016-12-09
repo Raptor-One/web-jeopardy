@@ -10,10 +10,28 @@
 <div id="intro-div">
     <img src="web-jeopardy-logo.png">
     <p>SETUP</p>
-    <p id="info-text">Paste game-board below or upload file</p>
-    <input type="file" multiple size="50" onchange="loadTextFromFile(this)">
-    <textarea rows="5" cols="100" id="game-input"></textarea>
-    <a onclick="loadGameFromText('game-input')">LOAD</a>
+    <table style="width:960px;">
+        <tr>
+            <td style="vertical-align:top;" width="50%">
+                <p id="info-text">Paste game-board below or upload file</p>
+                <input type="file" multiple size="50" onchange="loadTextFromFile(this)">
+                <br/>
+                    <textarea cols="64" rows="30" id="game-input"></textarea>
+                <br/>
+                <a style="margin-left: 43%;" onclick="loadGameFromText('game-input')">LOAD</a>
+                <hr color="white" >
+            </td>
+            <td style="vertical-align:top;" width="50%">
+                <p>Select Theme</p>
+                <p>Coming not so soon</p>
+                <label><input type="checkbox" id="intro-cbox" value="intro_checkbox"> Play Intro At Beginning</label><br>
+                <label><input type="checkbox" id="sound-cbox" value="sound_checkbox"> Play Sound</label><br>
+                <label><input type="checkbox" id="timer-cbox" value="timer_checkbox"> Enable Timers</label><br>
+                <a style="margin-left: 40%;" onclick="loadGameFromText('game-input')">START GAME</a>
+                <hr color="white" >
+            </td>
+        </tr>
+    </table>
 </div>
 <div id="game-board-outer-div">
     <div>
