@@ -1,8 +1,8 @@
 /**
  * Created by philip on 2016-11-08.
  */
-var NUMBER_OF_COLUMNS = 1;
-var NUMBER_OF_ROWS = 2;
+var numberOfColumns = 0;
+var numberOfRows = [];
 var moduleDictionary = {};
 
 
@@ -12,30 +12,31 @@ function loadGameFromText(id) {
 
     var categories = xmlDoc.getElementsByTagName("category");
 
-    if (categories.length == NUMBER_OF_COLUMNS)
+    var documentCategories = document.getElementsByClassName("cat");
+
+    for(var c = 0; c < categories.length; c++)
     {
-        var documentCategories = document.getElementsByClassName("cat");
 
-        for(var c = 0; c < categories.length; c++)
+        numberOfColumns++;
+        documentCategories[c].innerHTML = categories[c].getElementsByTagName("name")[0].innerHTML.replace(/\n\s\s+/g, ' ');
+
+        var modules = categories[c].getElementsByTagName("module");
+
+        for(var r = 0; r < modules.length; r++)
         {
-            documentCategories[c].innerHTML = categories[c].getElementsByTagName("name")[0].innerHTML.replace(/\n\s\s+/g, ' ');
-
-            var modules = categories[c].getElementsByTagName("module");
-
-            if (modules.length == NUMBER_OF_ROWS)
-            {
-                for(var r = 0; r < modules.length; r++)
-                {
-                    moduleDictionary[(c+1)+''+(r+1)] = { "a": modules[r].getElementsByTagName("answer")[0].innerHTML.replace(/\n\s\s+/g, ' '), "q": modules[r].getElementsByTagName("question")[0].innerHTML.replace(/\n\s\s+/g, ' ')};
-                }
-            }
+            numberOfRows[c] = r +1  ;
+            moduleDictionary[(c+1)+''+(r+1)] = { "a": modules[r].getElementsByTagName("answer")[0].innerHTML.replace(/\n\s\s+/g, ' '), "q": modules[r].getElementsByTagName("question")[0].innerHTML.replace(/\n\s\s+/g, ' ')};
         }
     }
 
-    if(Object.keys(moduleDictionary).length == NUMBER_OF_COLUMNS*NUMBER_OF_ROWS)
+    if(Object.keys(moduleDictionary).length == numberOfRows*numberOfRows[0])
     {
         activateEventListeners();
         document.getElementById("info-text").innerHTML = "Game Board has been loaded :)";
+    }
+    else {
+        logError("number of rows is not them sam in each column");
+        return;
     }
 }
 
@@ -76,8 +77,22 @@ function loadTextFromFile(elem){
         // Read the file
         reader.readAsText(textFile);
         reader.addEventListener('load', function(t){
-            document.getElementById("game-input").innerHTML = t.target.result;w
+            document.getElementById("game-input").innerHTML = t.target.result;
         });
     }
+}
+
+function resizeTable() {
+    var viewportWidth = document.body.clientWidth;
+    var viewportHeight = document.body.clientHeight;
+
+
+
+}
+
+function logError(msg) {
+
+    console.warn(msg);
+
 }
 

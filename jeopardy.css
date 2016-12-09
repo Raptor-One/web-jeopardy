@@ -1,3 +1,16 @@
+@font-face {
+    font-family: swiss-911;
+    src: url(swiss911.woff);
+}
+@font-face {
+    font-family: ITC-korinna;
+    src: url(ITCkorinna.otf);
+}
+@font-face {
+    font-family: swiss-911-extra;
+    src: url(swiss911extra.ttf);
+}
+
 
 body {
     font-family: arial black;
@@ -29,19 +42,31 @@ body {
 }
 
 #game-board {
-    border: solid black 5px;
-    background-color: #00f;
+    border: solid #04050D 10px;
+    border-collapse: collapse;
+    background-color: #0200c3;
 }
 
 .cat {
+    font-family: swiss-911-extra;
+    letter-spacing: 2.5px;
+    font-size: 40px;
     color: white;
-    border: solid black 4px;
+    border-bottom: solid #04050D 10px;
+    border-right: solid #04050D 6px;
+    border-left: solid #04050D 6px;
     text-align: center;
+    padding: 0px;
+
 }
 
 .money {
-    font-size: 30px;
+    font-family: swiss-911;
+    font-size: 40pt;
+    text-shadow: 5px 5px #04050D;
     text-align: center;
-    color: #fd0;
-    border: solid black 4px;
+    color: #eba820;
+    border: solid #04050D 6px;
+    padding: 0px;
+
 }

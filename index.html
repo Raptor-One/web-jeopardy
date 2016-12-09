@@ -10,7 +10,7 @@
 <div id="intro-div">
     <img src="web-jeopardy-logo.png">
     <p>SETUP</p>
-    <p>Paste game-board below or upload file</p>
+    <p id="info-text">Paste game-board below or upload file</p>
     <input type="file" multiple size="50" onchange="loadTextFromFile(this)">
     <textarea rows="5" cols="100" id="game-input"></textarea>
     <a onclick="loadGameFromText('game-input')">LOAD</a>
@@ -23,12 +23,12 @@
         <table id="game-board">
             <tbody>
             <tr>
-                <th class="cat">To Be Deternined</th>
-                <th class="cat">To Be Deternined</th>
-                <th class="cat">To Be Deternined</th>
-                <th class="cat">To Be Deternined</th>
-                <th class="cat">To Be Deternined</th>
-                <th class="cat">To Be Deternined</th>
+                <th class="cat">TO BE DETERMINED</th>
+                <th class="cat">TO BE DETERMINED</th>
+                <th class="cat">TO BE DETERMINED</th>
+                <th class="cat">TO BE DETERMINED</th>
+                <th class="cat">TO BE DETERMINED</th>
+                <th class="cat">TO BE DETERMINED</th>
             </tr>
             <tr>
                 <td id="c1r1" class="money">$200</td>
@@ -75,7 +75,7 @@
     </div>
 </div>
 <div id="question-outer-div">
-    <p id="info-text">nothing for now...</p>
+    <p>nothing for now...</p>
 </div>
 </body>
 </html>
