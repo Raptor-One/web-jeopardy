@@ -4,21 +4,29 @@
 var numberOfColumns = 0;
 var numberOfRows = [];
 var moduleDictionary = {};
+var moduleValues = [];
+var categoryNames = [];
 
 
 function loadGameFromText(id) {
     var parser = new DOMParser();
     var xmlDoc = parser.parseFromString(document.getElementById(id).value,"text/xml");
 
-    var categories = xmlDoc.getElementsByTagName("category");
 
-    var documentCategories = document.getElementsByClassName("cat");
+    var points = xmlDoc.getElementsByTagName("money");
+
+    for(var p = 0; p < points.length; p++)
+    {
+        moduleValues[p] = points[p].innerHTML.replace(/\n\s\s+/g, ' ');
+    }
+
+    var categories = xmlDoc.getElementsByTagName("category");
 
     for(var c = 0; c < categories.length; c++)
     {
 
         numberOfColumns++;
-        documentCategories[c].innerHTML = categories[c].getElementsByTagName("name")[0].innerHTML.replace(/\n\s\s+/g, ' ');
+        categoryNames[c] = categories[c].getElementsByTagName("name")[0].innerHTML.replace(/\n\s\s+/g, ' ');
 
         var modules = categories[c].getElementsByTagName("module");
 
@@ -31,7 +39,7 @@ function loadGameFromText(id) {
 
     if(Object.keys(moduleDictionary).length == numberOfRows*numberOfRows[0])
     {
-        activateEventListeners();
+        generateTableData();
         document.getElementById("info-text").innerHTML = "Game Board has been loaded :)";
     }
     else {
@@ -40,17 +48,42 @@ function loadGameFromText(id) {
     }
 }
 
-function activateEventListeners() {
-    var modules = document.getElementsByClassName("money");
+function generateTableData() {
 
-    for(var i = 0; i < modules.length; i++)
+    var tableBody = document.getElementById("game-board").getElementsByTagName("tbody")[0];
+
+    var tableRow = document.createElement("TR");
+
+    for(var c = 0; c < numberOfColumns; c++) {
+        var cat = document.createElement("TD");
+        cat.className = "cat";
+        cat.innerHTML = categoryNames[c].toUpperCase();
+
+        tableRow.appendChild(cat);
+    }
+
+    tableBody.appendChild(tableRow);
+
+    for(var r = 0; r < numberOfColumns; r++)
     {
-        modules[i].addEventListener("click", function () {
-            document.getElementById("game-board-outer-div").style.display = 'none';
-            document.getElementById("question-outer-div").style.display = 'block';
-            document.getElementById("info-text").innerHTML = moduleDictionary[this.id.charAt(1)+''+this.id.charAt(3)].a;
-            document.addEventListener("dblclick", returnToGameBoard);
-        })
+        var tableRow = document.createElement("TR");
+
+        for(var c = 0; c < numberOfColumns; c++)
+        {
+            var module = document.createElement("TD");
+            module.className = "money";
+            module.innerHTML = moduleValues[r];
+            module.addEventListener("click", function () {
+                document.getElementById("game-board-outer-div").style.display = 'none';
+                document.getElementById("question-outer-div").style.display = 'block';
+                document.getElementById("info-text").innerHTML = moduleDictionary[this.id.charAt(1)+''+this.id.charAt(3)].a;
+                document.addEventListener("dblclick", returnToGameBoard);})
+
+            tableRow.appendChild(module);
+
+        }
+
+        tableBody.appendChild(tableRow);
     }
 
 }
