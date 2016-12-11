@@ -91,7 +91,7 @@ function generateTableData() {
             module.addEventListener("click", function () {
                 document.getElementById("game-board-outer-div").style.display = 'none';
                 document.getElementById("question-outer-div").style.display = 'block';
-                document.getElementById("clue-text").innerHTML = moduleDictionary[(c)+""+(r)].a;
+                document.getElementById("clue-text").innerHTML = moduleDictionary[(c)+""+(r)].a.toUpperCase();
                 document.addEventListener("dblclick", returnToGameBoard);});
 
             tableRow.appendChild(module);

@@ -18,6 +18,10 @@ body {
     width: 100%;
 }
 
+body {
+    margin: 0px;
+}
+
 #intro-div {
     text-align: center;
     text-align: -webkit-center;
@@ -26,8 +30,16 @@ body {
 
 #question-outer-div {
     text-align: center;
-    color: #da0;
+    height: 100vh;
+    width: 100vw;
     display: none;
+}
+
+#question-inner-div {
+    width: 80vw;
+    height: 80vh;
+    padding: 9vh 10vw 11vh 10vw;
+    vertical-align: middle;
 }
 
 #game-board-outer-div{
@@ -73,9 +85,10 @@ body {
 
 .clue {
     font-family: ITC-korinna;
-    font-size: 500%;
-    text-shadow: 5px 5px #04050D;
+    font-weight: bold;
+    font-size: 10vh;
+    letter-spacing: 0.5vh;
+    text-shadow: 1vh 1vh 1.25vh #04050D;
     color: white;
     text-align: center;
-    vertical-align: middle;
 }
