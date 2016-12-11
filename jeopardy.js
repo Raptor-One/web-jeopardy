@@ -9,18 +9,22 @@ var categoryNames = [];
 
 
 function loadGameFromText(id) {
+
+    resetValues();
+
     var parser = new DOMParser();
     var xmlDoc = parser.parseFromString(document.getElementById(id).value,"text/xml");
+    var gameBoard = xmlDoc.getElementsByTagName("game-board")[0];
 
 
-    var points = xmlDoc.getElementsByTagName("money");
+    var points = gameBoard.getElementsByTagName("money");
 
     for(var p = 0; p < points.length; p++)
     {
         moduleValues[p] = points[p].innerHTML.replace(/\n\s\s+/g, ' ');
     }
 
-    var categories = xmlDoc.getElementsByTagName("category");
+    var categories = gameBoard.getElementsByTagName("category");
 
     for(var c = 0; c < categories.length; c++)
     {
@@ -37,14 +41,19 @@ function loadGameFromText(id) {
         }
     }
 
-    if(Object.keys(moduleDictionary).length == numberOfRows*numberOfRows[0])
+    if(categoryNames.length != numberOfColumns)
     {
-        generateTableData();
-        document.getElementById("info-text").innerHTML = "Game Board has been loaded :)";
+        logError("number of money values is not them same as the number of columns");
+        return;
+    }
+    else if (Object.keys(moduleDictionary).length != numberOfColumns*numberOfRows[0])
+    {
+        logError("number of rows is not them same in each column");
+        return;
     }
     else {
-        logError("number of rows is not them sam in each column");
-        return;
+        generateTableData();
+        document.getElementById("info-text").innerHTML = "Game Board has been loaded :)";
     }
 }
 
@@ -127,5 +136,13 @@ function logError(msg) {
 
     console.warn(msg);
 
+}
+
+function resetValues(){
+    numberOfColumns = 0;
+    numberOfRows = [];
+    moduleDictionary = {};
+    moduleValues = [];
+    categoryNames = [];
 }
 
