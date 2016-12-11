@@ -53,6 +53,8 @@ function loadGameFromText(id) {
     }
     else {
         generateTableData();
+        resizeTable();
+        window.addEventListener('resize', resizeTable);
         document.getElementById("info-text").innerHTML = "Game Board has been loaded :)";
     }
 }
@@ -131,8 +133,31 @@ function loadTextFromFile(elem){
 }
 
 function resizeTable() {
-    var viewportWidth = document.body.clientWidth;
-    var viewportHeight = document.body.clientHeight;
+    var viewportWidth = window.innerWidth;
+    var viewportHeight = window.innerHeight;
+    var table = document.getElementById("game-board");
+
+    var width;
+    var height;
+
+    if((numberOfColumns*26)/((numberOfRows[0]+1)*15) < viewportWidth/viewportHeight)
+    {
+        height = (viewportHeight/(numberOfRows[0]+1))-((numberOfRows[0]+1)*12-2);
+        width = height*(26/15);
+    }
+    else
+    {
+        width = (viewportWidth/numberOfColumns)-(numberOfColumns*12);
+        height = width*(15/26);
+    }
+
+    var modules = table.getElementsByTagName("td");
+
+    for(var i = 0; i < modules.length; i++)
+    {
+        modules[i].width = width+"px";
+        modules[i].height = height+"px";
+    }
 
 
 
