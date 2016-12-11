@@ -27,7 +27,7 @@
                 <label><input type="checkbox" id="intro-cbox" value="intro_checkbox"> Play Intro At Beginning</label><br>
                 <label><input type="checkbox" id="sound-cbox" value="sound_checkbox"> Play Sound</label><br>
                 <label><input type="checkbox" id="timer-cbox" value="timer_checkbox"> Enable Timers</label><br>
-                <a style="margin-left: 40%;" onclick="loadGameFromText('game-input')">START GAME</a>
+                <a style="margin-left: 40%;" onclick="startGame()">START GAME</a>
                 <hr color="white" >
             </td>
         </tr>
@@ -45,7 +45,7 @@
     </div>
 </div>
 <div id="question-outer-div">
-    <p>nothing for now...</p>
+    <p id="clue-text" class="clue"></p>
 </div>
 </body>
 </html>

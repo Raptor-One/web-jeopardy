@@ -57,6 +57,12 @@ function loadGameFromText(id) {
     }
 }
 
+function startGame(){
+    document.getElementById("intro-div").style.display = "none";
+    document.getElementById("game-board-outer-div").style.display = "block";
+
+}
+
 function generateTableData() {
 
     var tableBody = document.getElementById("game-board").getElementsByTagName("tbody")[0];
@@ -85,8 +91,8 @@ function generateTableData() {
             module.addEventListener("click", function () {
                 document.getElementById("game-board-outer-div").style.display = 'none';
                 document.getElementById("question-outer-div").style.display = 'block';
-                document.getElementById("info-text").innerHTML = moduleDictionary[this.id.charAt(1)+''+this.id.charAt(3)].a;
-                document.addEventListener("dblclick", returnToGameBoard);})
+                document.getElementById("clue-text").innerHTML = moduleDictionary[(c)+""+(r)].a;
+                document.addEventListener("dblclick", returnToGameBoard);});
 
             tableRow.appendChild(module);
 

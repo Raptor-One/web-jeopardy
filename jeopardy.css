@@ -70,3 +70,12 @@ body {
     padding: 0px;
 
 }
+
+.clue {
+    font-family: ITC-korinna;
+    font-size: 500%;
+    text-shadow: 5px 5px #04050D;
+    color: white;
+    text-align: center;
+    vertical-align: middle;
+}
