@@ -81,7 +81,7 @@ function generateTableData() {
 
     tableBody.appendChild(tableRow);
 
-    for(var r = 0; r < numberOfColumns; r++)
+    for(var r = 0; r < numberOfRows[0]; r++)
     {
         var tableRow = document.createElement("TR");
 
