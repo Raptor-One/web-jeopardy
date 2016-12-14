@@ -16,7 +16,52 @@
                 <p id="info-text">Paste game-board below or upload file</p>
                 <input type="file" multiple size="50" onchange="loadTextFromFile(this)">
                 <br/>
-                    <textarea cols="64" rows="30" id="game-input"></textarea>
+                    <textarea cols="64" rows="30" id="game-input"><game-board>
+	<points>$100</points>
+	<points>$200</points>
+	<category>
+		<name>
+			Star Trek
+		</name>
+		<module>
+			<answer>
+				Created in 2161
+			</answer>
+			<question>
+				What is the United Federation of Planets?
+			</question>
+		</module>
+		<module>
+			<answer>
+				A messager to the 22 centry in the temperal cold war
+			</answer>
+			<question>
+				Who is Daniels
+			</question>
+		</module>
+	</category>
+		<category>
+		<name>
+			Oxymorons
+		</name>
+		<module>
+			<answer>
+				Orbiting the earth
+			</answer>
+			<question>
+				What is the Space Station?
+			</question>
+		</module>
+		<module>
+			<answer>
+				Zombies
+			</answer>
+			<question>
+				What is the living dead?
+			</question>
+		</module>
+	</category>
+</game-board></textarea>
                 <br/>
                 <a style="margin-left: 43%;" onclick="loadGameFromText('game-input')">LOAD</a>
                 <hr color="white" >
@@ -34,7 +79,7 @@
     </table>
 </div>
 <div id="game-board-outer-div">
-    <div style="text-align: center; text-align: -webkit-center;">
+    <div style="text-align: center; text-align: -webkit-center; height: 100vh;">
         <table id="game-board">
             <tbody>
             </tbody>

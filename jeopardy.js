@@ -2,7 +2,7 @@
  * Created by philip on 2016-11-08.
  */
 var numberOfColumns = 0;
-var numberOfRows = [];
+var numberOfRows = 0;
 var moduleDictionary = {};
 var moduleValues = [];
 var categoryNames = [];
@@ -17,7 +17,7 @@ function loadGameFromText(id) {
     var gameBoard = xmlDoc.getElementsByTagName("game-board")[0];
 
 
-    var points = gameBoard.getElementsByTagName("money");
+    var points = gameBoard.getElementsByTagName("points");
 
     for(var p = 0; p < points.length; p++)
     {
@@ -34,11 +34,24 @@ function loadGameFromText(id) {
 
         var modules = categories[c].getElementsByTagName("module");
 
+        var rowCount = 0;
         for(var r = 0; r < modules.length; r++)
         {
-            numberOfRows[c] = r +1  ;
+            rowCount++;
             moduleDictionary[(c+1)+''+(r+1)] = { "a": modules[r].getElementsByTagName("answer")[0].innerHTML.replace(/\n\s\s+/g, ' '), "q": modules[r].getElementsByTagName("question")[0].innerHTML.replace(/\n\s\s+/g, ' ')};
         }
+
+        if(numberOfRows == 0)
+        {
+            numberOfRows = rowCount;
+        }
+        else if (numberOfRows != rowCount)
+        {
+            logError("number of rows is not them same in each column");
+            return;
+        }
+
+
     }
 
     if(categoryNames.length != numberOfColumns)
@@ -46,7 +59,7 @@ function loadGameFromText(id) {
         logError("number of money values is not them same as the number of columns");
         return;
     }
-    else if (Object.keys(moduleDictionary).length != numberOfColumns*numberOfRows[0])
+    else if (Object.keys(moduleDictionary).length != numberOfColumns*numberOfRows)
     {
         logError("number of rows is not them same in each column");
         return;
@@ -81,7 +94,7 @@ function generateTableData() {
 
     tableBody.appendChild(tableRow);
 
-    for(var r = 0; r < numberOfRows[0]; r++)
+    for(var r = 0; r < numberOfRows; r++)
     {
         var tableRow = document.createElement("TR");
 
@@ -90,10 +103,11 @@ function generateTableData() {
             var module = document.createElement("TD");
             module.className = "money";
             module.innerHTML = moduleValues[r];
+            module.setAttribute("a", moduleDictionary[(c+1)+""+(r+1)].a.toUpperCase());
             module.addEventListener("click", function () {
                 document.getElementById("game-board-outer-div").style.display = 'none';
                 document.getElementById("question-outer-div").style.display = 'block';
-                document.getElementById("clue-text").innerHTML = moduleDictionary[(c)+""+(r)].a.toUpperCase();
+                document.getElementById("clue-text").innerHTML = this.getAttribute("a");
                 document.addEventListener("dblclick", returnToGameBoard);});
 
             tableRow.appendChild(module);
@@ -140,9 +154,9 @@ function resizeTable() {
     var width;
     var height;
 
-    if((numberOfColumns*26)/((numberOfRows[0]+1)*15) < viewportWidth/viewportHeight)
+    if((numberOfColumns*26)/((numberOfRows+1)*15) < viewportWidth/viewportHeight)
     {
-        height = (viewportHeight/(numberOfRows[0]+1))-((numberOfRows[0]+1)*12-2);
+        height = (viewportHeight/(numberOfRows+1))-((numberOfRows+1)*12-2);
         width = height*(26/15);
     }
     else
@@ -171,7 +185,7 @@ function logError(msg) {
 
 function resetValues(){
     numberOfColumns = 0;
-    numberOfRows = [];
+    numberOfRows = 0;
     moduleDictionary = {};
     moduleValues = [];
     categoryNames = [];
