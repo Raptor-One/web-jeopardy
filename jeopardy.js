@@ -63,7 +63,7 @@ function loadGameFromText(id) {
 
     }
 
-    if(categoryNames.length != numberOfColumns)
+    if(moduleValues.length != numberOfColumns+1)
     {
         logError("number of money values is not them same as the number of columns");
         return;
