@@ -120,6 +120,7 @@ function generateTableData() {
             module.id = (c+1)+""+(r+1);
             module.setAttribute("a", moduleDictionary[(c+1)+""+(r+1)].a.toUpperCase());
             module.addEventListener("click", function () {
+                this.innerHTML = "";
                 document.getElementById("game-board-outer-div").style.display = 'none';
                 document.getElementById("question-outer-div").style.display = 'block';
                 document.getElementById("clue-text").innerHTML = this.getAttribute("a");
