@@ -92,6 +92,9 @@ function startGame(){
 function generateTableData() {
 
     var tableBody = document.getElementById("game-board").getElementsByTagName("tbody")[0];
+    while (tableBody.hasChildNodes()) {
+        tableBody.removeChild(tableBody.lastChild);
+    }
 
     var tableRow = document.createElement("TR");
 
