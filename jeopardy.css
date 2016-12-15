@@ -77,8 +77,7 @@ body {
 
 .money {
     font-family: swiss-911;
-    font-size: 40pt;
-    text-shadow: 5px 5px #04050D;
+    text-shadow: #04050D;
     text-align: center;
     color: #eba820;
     border: solid #04050D 6px;

@@ -103,6 +103,7 @@ function generateTableData() {
             var module = document.createElement("TD");
             module.className = "money";
             module.innerHTML = moduleValues[r];
+            module.id = (c+1)+""+(r+1);
             module.setAttribute("a", moduleDictionary[(c+1)+""+(r+1)].a.toUpperCase());
             module.addEventListener("click", function () {
                 document.getElementById("game-board-outer-div").style.display = 'none';
@@ -158,11 +159,13 @@ function resizeTable() {
     {
         height = (viewportHeight/(numberOfRows+1))-((numberOfRows+1)*12-2);
         width = height*(26/15);
+        table.style.height = "100%";
     }
     else
     {
         width = (viewportWidth/numberOfColumns)-(numberOfColumns*12);
         height = width*(15/26);
+        table.style.height = "initial";
     }
 
     var modules = table.getElementsByTagName("td");
@@ -173,8 +176,48 @@ function resizeTable() {
         modules[i].height = height+"px";
     }
 
+    for(var r = 0; r < numberOfRows; r++)
+    {
+        var textDimensions = getWidthOfText(moduleValues[r], "ITCkorinna", 100);
+        var fontSize;
+        if(textDimensions.w/textDimensions.h < width/height)
+        {
+            fontSize = height;
+        }
+        else
+        {
+            fontSize = textDimensions.h /textDimensions.w * width
+        }
 
+        for(var c = 0; c < numberOfColumns; c++)
+        {
+            var elem = document.getElementById((c+1)+""+(r+1));
+            elem.style.fontSize = fontSize - (fontSize*0.1)+"px";
+            var shadow = fontSize*0.05;
+            elem.style.textShadow = shadow + "px "+ shadow + "px #04050D";
 
+        }
+    }
+
+}
+
+window.getWidthOfText = function(txt, fontname, fontsize){
+    // Create dummy span
+    this.e = document.createElement('span');
+    // Set font-size
+    this.e.style.fontSize = fontsize;
+    // Set font-face / font-family
+    this.e.style.fontFamily = fontname;
+    // Set text
+    this.e.innerHTML = txt;
+    document.body.appendChild(this.e);
+    // Get width NOW, since the dummy span is about to be removed from the document
+    var w = this.e.offsetWidth;
+    var h = this.e.offsetHeight;
+    // Cleanup
+    document.body.removeChild(this.e);
+    // All right, we're done
+    return {w:w,h:h};
 }
 
 function logError(msg) {
