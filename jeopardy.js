@@ -38,7 +38,16 @@ function loadGameFromText(id) {
         for(var r = 0; r < modules.length; r++)
         {
             rowCount++;
-            moduleDictionary[(c+1)+''+(r+1)] = { "a": modules[r].getElementsByTagName("answer")[0].innerHTML.replace(/\n\s\s+/g, ' '), "q": modules[r].getElementsByTagName("question")[0].innerHTML.replace(/\n\s\s+/g, ' ')};
+            try {
+                moduleDictionary[(c + 1) + '' + (r + 1)] = {
+                    "a": modules[r].getElementsByTagName("answer")[0].innerHTML.replace(/\n\s\s+/g, ' '),
+                    "q": modules[r].getElementsByTagName("question")[0].innerHTML.replace(/\n\s\s+/g, ' ')
+                };
+            }catch (error)
+            {
+                logError("Missing either question or answer from one module");
+                return;
+            }
         }
 
         if(numberOfRows == 0)
@@ -68,7 +77,9 @@ function loadGameFromText(id) {
         generateTableData();
         resizeTable();
         window.addEventListener('resize', resizeTable);
-        document.getElementById("info-text").innerHTML = "Game Board has been loaded :)";
+        var infoText = document.getElementById("info-text");
+        infoText.innerHTML = "Game Board has been loaded :)";
+        infoText.style.color = "lightgreen";
     }
 }
 
@@ -223,6 +234,9 @@ window.getWidthOfText = function(txt, fontname, fontsize){
 function logError(msg) {
 
     console.warn(msg);
+    var infoText = document.getElementById("info-text");
+    infoText.innerHTML = msg;
+    infoText.style.color = "yellow";
 
 }
 
