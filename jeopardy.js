@@ -162,8 +162,8 @@ function loadTextFromFile(elem){
 }
 
 function resizeTable() {
-    var viewportWidth = window.innerWidth;
-    var viewportHeight = window.innerHeight;
+    var viewportWidth = window.innerWidth - 20;
+    var viewportHeight = window.innerHeight - 20;
     var table = document.getElementById("game-board");
 
     var width;
@@ -171,15 +171,15 @@ function resizeTable() {
 
     if((numberOfColumns*26)/((numberOfRows+1)*15) < viewportWidth/viewportHeight)
     {
-        height = (viewportHeight/(numberOfRows+1))-((numberOfRows+1)*12-2);
+        height = (viewportHeight/(numberOfRows+1))-6;
         width = height*(26/15);
-        table.style.height = "100%";
+
     }
     else
     {
-        width = (viewportWidth/numberOfColumns)-(numberOfColumns*12);
+        width = (viewportWidth/numberOfColumns)-6;
         height = width*(15/26);
-        table.style.height = "initial";
+
     }
 
     var modules = table.getElementsByTagName("td");
