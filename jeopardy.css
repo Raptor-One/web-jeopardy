@@ -56,6 +56,8 @@ body {
 }
 
 #game-board {
+    text-align: center;
+    text-align: -webkit-center;
     border: solid #04050D 10px;
     border-collapse: collapse;
     background-color: #0200c3;
