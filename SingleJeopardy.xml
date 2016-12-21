@@ -1,10 +1,10 @@
 <game-board>
   <!-- Set points for game-board -->
-  <points>$200</points>
-  <points>$400</points>
-  <points>$600</points>
-  <points>$800</points>
-  <points>$1000</points>
+  <money>$200</money>
+  <money>$400</money>
+  <money>$600</money>
+  <money>$800</money>
+  <money>$1000</money>
  <!-- 1st category -->
   <category>
     <name>
@@ -48,146 +48,186 @@
 <!-- 2nd category -->
   <category>
     <name>
+      Video Games
     </name>
  <!-- 1st clue -->
     <module>
       <answer>
+        Nintendo's most famous character.
       </answer>
       <question>
+        Who is Mario?
       </question>
     </module>
 <!-- 2nd clue -->
     <module>
       <answer>
+        This game is probably the most popular game ever sold for the Wii.
       </answer>
       <question>
+        What is Wii Sports?
       </question>
     </module>
 <!-- 3rd clue -->
     <module>
       <answer>
+        Nintendo's very first game console.
       </answer>
       <question>
+        What is the Nintendo Entertainment System?
       </question>
     </module>
 <!-- 4th clue -->
     <module>
       <answer>
+        Nintendo's newest game console.
       </answer>
       <question>
+        What is the Nintendo Switch?
       </question>
     </module>
 <!-- 5th clue -->
     <module>
       <answer>
+        Nintendo sold 98,000,000 (98M) of these.
       </answer>
       <question>
+        What is the Nintendo Wii?
       </question>
     </module>
   </category>
 <!-- 3rd category -->
     <category>
       <name>
+        Music
       </name>
  <!-- 1st clue -->
       <module>
         <answer>
+          This defines the amount of beats per bar in a piece of music.
         </answer>
         <question>
+          What is the time signature?
         </question>
       </module>
   <!-- 2nd clue -->
       <module>
         <answer>
+          <img src="http://www.selftaughtguitarlessons.com/wp-content/uploads/2014/03/TrebleClef.gif"/>
         </answer>
         <question>
+          What is a Treble Clef?
         </question>
       </module>
   <!-- 3rd clue -->
       <module>
         <answer>
+          <img src="http://www.charbase.com/images/glyph/119047"/>
         </answer>
         <question>
+          What is a repeat sign?
         </question>
       </module>
   <!-- 4th clue -->
       <module>
         <answer>
+          The four parts of Modern Vocal Score.
         </answer>
         <question>
+          What are Soprano, Alto, Tenor, Bass?
         </question>
       </module>
   <!-- 5th clue -->
       <module>
         <answer>
+          Lines that are placed above or below the staff to write down a certain note.
         </answer>
         <question>
+          What are leger lines?
         </question>
       </module>
     </category>
   <!-- 4th category -->
     <category>
       <name>
+        Sports
       </name>
  <!-- 1st clue -->
       <module>
         <answer>
+          The number of players on a Soccer field (1 team).
         </answer>
         <question>
+          What is 11?
         </question>
       </module>
  <!-- 2nd clue -->
       <module>
         <answer>
+          The number of balls in 8 ball pool.
         </answer>
         <question>
+          What is 15?
         </question>
       </module>
  <!-- 3rd clue -->
       <module>
         <answer>
+          The number of periods in an American Football game.
         </answer>
         <question>
+          What is 4?
         </question>
       </module>
  <!-- 4th clue -->
       <module>
         <answer>
+          The most popular sport in the World.
         </answer>
         <question>
+          What is Soccer or European Football?
         </question>
       </module>
  <!-- 5th clue -->
       <module>
         <answer>
+          The number of players on a foosball table.
         </answer>
         <question>
+          What is 26?
         </question>
       </module>
     </category>
   <!-- 5th category -->
     <category>
       <name>
+        Technology
       </name>
  <!-- 1st clue -->
       <module>
         <answer>
+          The most common internet search engine.
         </answer>
         <question>
+          What is Google?
         </question>
       </module>
  <!-- 2nd clue -->
       <module>
         <answer>
+          Apple's newest Phone
         </answer>
         <question>
+          What is the iPhone 7S Plus?
         </question>
       </module>
  <!-- 3rd clue -->
       <module>
         <answer>
+          The highest quality resolution available on today's screens.
         </answer>
         <question>
+          What is 1080p?
         </question>
       </module>
  <!-- 4th clue -->

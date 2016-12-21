@@ -1,10 +1,10 @@
 <game-board>
   <!-- Set points for game-board -->
-  <points>$400</points>
-  <points>$800</points>
-  <points>$1200</points>
-  <points>$1600</points>
-  <points>$2000</points>
+  <money>$400</money>
+  <money>$800</money>
+  <money>$1200</money>
+  <money>$1600</money>
+  <money>$2000</money>
  <!-- 1st category -->
   <category>
     <name>
@@ -105,8 +105,10 @@
  <!-- 1st clue -->
       <module>
         <answer>
+          A famous inventor, architect, painter, scientist, sculptor, and musician of the Renaissance.
         </answer>
         <question>
+          Who is Leonardo Da Vinci?
         </question>
       </module>
   <!-- 2nd clue -->
@@ -130,15 +132,19 @@
   <!-- 4th clue -->
       <module>
         <answer>
+          The child of a French person and a First Nations's marriage.
         </answer>
         <question>
+          What are the Métis?
         </question>
       </module>
   <!-- 5th clue -->
       <module>
         <answer>
+          This major historical event forced the Métis to move westwards during the Manitoba Act time.
         </answer>
         <question>
+          What is the Bison Hunt?
         </question>
       </module>
     </category>
@@ -259,7 +265,7 @@
  <!-- 2nd clue -->
       <module>
         <answer>
-          When a king farts
+          When a king farts, the result is...
         </answer>
         <question>
           What is Noble Gas?
@@ -268,15 +274,19 @@
  <!-- 3rd clue -->
       <module>
         <answer>
+          The most important thing in the sport of Hockey.
         </answer>
         <question>
+          What is skating?
         </question>
       </module>
 <!-- 4th clue -->
       <module>
         <answer>
+          The Internet Explorer is the #1 browser for this.
         </answer>
         <question>
+          What is downloading another browser?
         </question>
       </module>
  <!-- 5th clue -->
