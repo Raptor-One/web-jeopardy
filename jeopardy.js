@@ -6,6 +6,7 @@ var numberOfRows = 0;
 var moduleDictionary = {};
 var moduleValues = [];
 var categoryNames = [];
+var imgElements = [];
 
 
 function loadGameFromText(id) {
@@ -37,11 +38,19 @@ function loadGameFromText(id) {
         var rowCount = 0;
         for(var r = 0; r < modules.length; r++)
         {
+            var img = modules[r].getElementsByTagName("img");
+            var imgIndex = "-1";
+            if (img.length > 0) {
+                img[0].id = "clue-img";
+                imgElements[imgElements.length] = img[0];
+                imgIndex = imgElements.length-1;
+            }
             rowCount++;
             try {
                 moduleDictionary[(c + 1) + '' + (r + 1)] = {
                     "a": modules[r].getElementsByTagName("answer")[0].innerHTML.replace(/\n\s\s+/g, ' '),
-                    "q": modules[r].getElementsByTagName("question")[0].innerHTML.replace(/\n\s\s+/g, ' ')
+                    "q": modules[r].getElementsByTagName("question")[0].innerHTML.replace(/\n\s\s+/g, ' '),
+                    "i": imgIndex
                 };
             }catch (error)
             {
@@ -118,12 +127,20 @@ function generateTableData() {
             module.className = "money";
             module.innerHTML = moduleValues[r];
             module.id = (c+1)+""+(r+1);
+            module.setAttribute("i", moduleDictionary[(c+1)+""+(r+1)].i);
             module.setAttribute("a", moduleDictionary[(c+1)+""+(r+1)].a.toUpperCase());
             module.addEventListener("click", function () {
                 this.innerHTML = "";
                 document.getElementById("game-board-outer-div").style.display = 'none';
                 document.getElementById("question-outer-div").style.display = 'block';
                 document.getElementById("clue-text").innerHTML = this.getAttribute("a");
+                if(this.getAttribute("i") != "-1") {
+                    var image = document.getElementById("clue-img");
+                    image.style.display = 'block';
+                    image.setAttribute("src", imgElements[this.getAttribute("i")].getAttribute("src"));
+                    image.style.width = imgElements[this.getAttribute("i")].getAttribute("width");
+                    image.style.height = imgElements[this.getAttribute("i")].getAttribute("height");
+                }
                 document.addEventListener("dblclick", returnToGameBoard);});
 
             tableRow.appendChild(module);
@@ -136,6 +153,7 @@ function generateTableData() {
 }
 
 function returnToGameBoard() {
+    document.getElementById("clue-img").style.display = 'none';
     document.getElementById("intro-div").style.display = 'none';
     document.getElementById("game-board-outer-div").style.display = 'block';
     document.getElementById("question-outer-div").style.display = 'none';
@@ -193,7 +211,7 @@ function resizeTable() {
 
     for(var r = 0; r < numberOfRows; r++)
     {
-        var textDimensions = getWidthOfText(moduleValues[r], "ITCkorinna", 100);
+        var textDimensions = getWidthOfText(moduleValues[r], "swiss-911", 100);
         var fontSize;
         if(textDimensions.w/textDimensions.h < width/height)
         {
@@ -207,12 +225,63 @@ function resizeTable() {
         for(var c = 0; c < numberOfColumns; c++)
         {
             var elem = document.getElementById((c+1)+""+(r+1));
-            elem.style.fontSize = fontSize - (fontSize*0.1)+"px";
+            elem.style.fontSize = fontSize - (fontSize*0.15)+"px";
             var shadow = fontSize*0.05;
             elem.style.textShadow = shadow + "px "+ shadow + "px #04050D";
 
         }
     }
+    //
+    // for(var c = 0; c < numberOfColumns; c++)
+    // {
+    //     var fontSize;
+    //     var textDimensions;
+    //     var newString;
+    //     var wordsArray = categoryNames[r].split(" ");
+    //     var wordsSize = [];
+    //     for(var w = 0; w < wordsArray.length; w++)
+    //     {
+    //         wordsSize[w] = getWidthOfText(wordsArray[w], "swiss-911-extra", 100);
+    //     }
+    //
+    //     if(wordsSize == 1)
+    //     {
+    //         textDimensions = wordsSize[0];
+    //     }
+    //     else
+    //     {
+    //         var possibleDimensions = [];
+    //
+    //         for(var i = 0; i < wordsSize.length; i++)
+    //         {
+    //             var testString = "";
+    //             for(var w = 0; w < wordsArray.length; w++)
+    //             {
+    //                 if(i == w && i != 0)
+    //                 {
+    //                     testString += "\n"
+    //                 }
+    //                 testString += wordsArray[w];
+    //             }
+    //         }
+    //
+    //         textDimensions = possibleDimensions[0]
+    //         for(var d = 1; d < possibleDimensions.length; d++)
+    //         {
+    //
+    //         }
+    //     }
+    //
+    //     if(textDimensions.w/textDimensions.h < width/height)
+    //     {
+    //         fontSize = height;
+    //     }
+    //     else
+    //     {
+    //         fontSize = textDimensions.h /textDimensions.w * width
+    //     }
+    //
+    // }
 
 }
 
@@ -250,5 +319,6 @@ function resetValues(){
     moduleDictionary = {};
     moduleValues = [];
     categoryNames = [];
+    imgElements = [];
 }
 
