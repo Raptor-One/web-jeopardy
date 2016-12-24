@@ -1,23 +1,24 @@
 # Web Jeopardy
 Web Jeopardy is a web-application that allows users to present a Jeopardy game board.
-*At it's current version, Wen Jeopardy cannot be played from multiple devices*
+*At it's current version, Web Jeopardy cannot be played from multiple devices*
 
 ## How To Play
 1. Go to philip.stachura.me/web-jeopardy/
-2. Either load a custom game file (see "Creating Game") or use example game
+2. Either load a custom game file (see "Markup") or the use example game
 3. Click on the **LOAD** button to confirm your choice
 4. Chose from a variety of options to customize you game
 5. Press **START GAME** when you are ready to start
 
-### Controls 
+## Controls 
+
 **Select Question** - single click inside one of the boxes
 **Return to Game Board** - double click anywhere
 
-### Markup
+## Markup
 Web Jeopardy game files are stored in XML format
 An example is provided when the page first loads
 
-#### Tags
+### Tags
 NOTE: all tags must be closed including the **img** tag
 \<game-board\> - surrounds all relevant game data
     \<points\> - indicate the pint value to be displayed for each row of modules
@@ -28,8 +29,8 @@ NOTE: all tags must be closed including the **img** tag
             \<answer\> - the answer to the question (it is displayed first)
             \<question\> - the question (in current version never displayed)
  
-#### Example
-``` html
+### Example
+``` xml
 <game-board>
   <points>$100</points>
   <points>$200</points>
