@@ -22,7 +22,7 @@ function loadGameFromText(id) {
 
     for(var p = 0; p < points.length; p++)
     {
-        moduleValues[p] = points[p].innerHTML.replace(/\n\s\s+/g, ' ');
+        moduleValues[p] = points[p].innerHTML.replace(/\n\s\s+/g, ' ').trim();
     }
 
     var categories = gameBoard.getElementsByTagName("category");
@@ -31,7 +31,7 @@ function loadGameFromText(id) {
     {
 
         numberOfColumns++;
-        categoryNames[c] = categories[c].getElementsByTagName("name")[0].innerHTML.replace(/\n\s\s+/g, ' ');
+        categoryNames[c] = categories[c].getElementsByTagName("name")[0].innerHTML.replace(/\n\s\s+/g, ' ').trim();
 
         var modules = categories[c].getElementsByTagName("module");
 
@@ -48,8 +48,8 @@ function loadGameFromText(id) {
             rowCount++;
             try {
                 moduleDictionary[(c + 1) + '' + (r + 1)] = {
-                    "a": modules[r].getElementsByTagName("answer")[0].innerHTML.replace(/\n\s\s+/g, ' '),
-                    "q": modules[r].getElementsByTagName("question")[0].innerHTML.replace(/\n\s\s+/g, ' '),
+                    "a": modules[r].getElementsByTagName("answer")[0].innerHTML.replace(/\n\s\s+/g, ' ').trim(),
+                    "q": modules[r].getElementsByTagName("question")[0].innerHTML.replace(/\n\s\s+/g, ' ').trim(),
                     "i": imgIndex
                 };
             }catch (error)
@@ -231,57 +231,63 @@ function resizeTable() {
 
         }
     }
-    //
-    // for(var c = 0; c < numberOfColumns; c++)
-    // {
-    //     var fontSize;
-    //     var textDimensions;
-    //     var newString;
-    //     var wordsArray = categoryNames[r].split(" ");
-    //     var wordsSize = [];
-    //     for(var w = 0; w < wordsArray.length; w++)
-    //     {
-    //         wordsSize[w] = getWidthOfText(wordsArray[w], "swiss-911-extra", 100);
-    //     }
-    //
-    //     if(wordsSize == 1)
-    //     {
-    //         textDimensions = wordsSize[0];
-    //     }
-    //     else
-    //     {
-    //         var possibleDimensions = [];
-    //
-    //         for(var i = 0; i < wordsSize.length; i++)
-    //         {
-    //             var testString = "";
-    //             for(var w = 0; w < wordsArray.length; w++)
-    //             {
-    //                 if(i == w && i != 0)
-    //                 {
-    //                     testString += "\n"
-    //                 }
-    //                 testString += wordsArray[w];
-    //             }
-    //         }
-    //
-    //         textDimensions = possibleDimensions[0]
-    //         for(var d = 1; d < possibleDimensions.length; d++)
-    //         {
-    //
-    //         }
-    //     }
-    //
-    //     if(textDimensions.w/textDimensions.h < width/height)
-    //     {
-    //         fontSize = height;
-    //     }
-    //     else
-    //     {
-    //         fontSize = textDimensions.h /textDimensions.w * width
-    //     }
-    //
-    // }
+
+    var cats = document.getElementsByClassName("cat");
+
+    for(var c = 0; c < numberOfColumns; c++)
+    {
+        var catFontSize;
+        var catTextDimensions;
+        var wordsArray = categoryNames[c].split(" ");
+        var wordsSize = [];
+        for(var w = 0; w < wordsArray.length; w++)
+        {
+            wordsSize[w] = getWidthOfText(wordsArray[w], "swiss-911-extra", 100);
+        }
+
+        if(wordsSize == 1)
+        {
+            textDimensions = wordsSize[0];
+        }
+        else
+        {
+            var possibleDimensions = [];
+
+
+            for(var x = 0; x < Math.pow(2, wordsArray.length -1); x++)
+            {
+
+                var stringBuffer = wordsArray[0];
+                for (var y = 0; y < wordsArray.length -1; y++)
+                {
+                    stringBuffer += (((x & (1 << y)) == 1) ? "\n" : " ") + wordsArray[y+1];
+                }
+
+                possibleDimensions[x] = getWidthOfText(stringBuffer, "swiss-911-extra", 100);
+            }
+
+            catTextDimensions = possibleDimensions[0];
+            for(var d = 1; d < possibleDimensions.length; d++)
+            {
+                if (Math.abs(possibleDimensions[d].w/possibleDimensions[d].h - width/height) < Math.abs(catTextDimensions.w/catTextDimensions.h - width/height))
+                {
+                    catTextDimensions = possibleDimensions[d];
+                }
+            }
+        }
+
+        if(catTextDimensions.w/catTextDimensions.h < width/height)
+        {
+            catFontSize = height;
+        }
+        else
+        {
+            catFontSize = catTextDimensions.h /catTextDimensions.w * width
+        }
+
+        cats[c].style.fontSize = catFontSize + "px";
+
+    }
 
 }
 
