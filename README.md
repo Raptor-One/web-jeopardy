@@ -20,14 +20,15 @@ An example is provided when the page first loads
 
 ### Tags
 NOTE: all tags must be closed including the **img** tag
-\<game-board\> - surrounds all relevant game data
-    \<points\> - indicate the pint value to be displayed for each row of modules
-    \<category\> - each set represents one category of column of the game board
-        \<name\> - within the name tag is the ame for its parent category
-        \<module\> - each module represents a box in the game board
-            \<img\> - \*\**Optional*: Used to display an image when answer is shown (use *src*, *width*, and *height* attributes as you would in HTML)
-            \<answer\> - the answer to the question (it is displayed first)
-            \<question\> - the question (in current version never displayed)
+</br>
+\<game-board\> - surrounds all relevant game data</br>
+    \<points\> - indicate the pint value to be displayed for each row of modules</br>
+    \<category\> - each set represents one category of column of the game board</br>
+        \<name\> - within the name tag is the ame for its parent category</br>
+        \<module\> - each module represents a box in the game board</br>
+            \<img\> - \*\**Optional*: Used to display an image when answer is shown (use *src*, *width*, and *height* attributes as you would in HTML)</br>
+            \<answer\> - the answer to the question (it is displayed first)</br>
+            \<question\> - the question (in current version never displayed)</br>
  
 ### Example
 ``` xml
