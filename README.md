@@ -11,7 +11,7 @@ Web Jeopardy is a web-application that allows users to present a Jeopardy game b
 
 ## Controls 
 
-**Select Question** - single click inside one of the boxes </bt>
+**Select Question** - single click inside one of the boxes </br>
 **Return to Game Board** - double click anywhere
 
 ## Markup
