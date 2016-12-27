@@ -1,47 +1,58 @@
 <game-board>
   <!-- Set points for game-board -->
-  <money>$200</money>
-  <money>$400</money>
-  <money>$600</money>
-  <money>$800</money>
-  <money>$1000</money>
+  <points>$200</points>
+  <points>$400</points>
+  <points>$600</points>
+  <points>$800</points>
+  <points>$1000</points>
  <!-- 1st category -->
   <category>
     <name>
+      Famous People
     </name>
  <!-- 1st clue -->
     <module>
       <answer>
+        This man is the current President of the United States.
       </answer>
       <question>
+        Who is Barack Obama?
       </question>
     </module>
  <!-- 2nd clue -->
     <module>
       <answer>
+        This man failed in an attempt to rule the world.
       </answer>
       <question>
+        Who is Adolf Hitler?
       </question>
     </module>
  <!-- 3rd clue -->
     <module>
       <answer>
+        This man created Apple.
       </answer>
       <question>
+        Who is Steve Jobs?
       </question>
     </module>
  <!-- 4th clue -->
     <module>
       <answer>
+        This man is especially famous for getting his "small loan of a million dollars".
       </answer>
       <question>
+        Who is Donald Trump?
       </question>
     </module>
  <!-- 5th clue -->
     <module>
       <answer>
+        This man created Mario and all of his fellow Nintendian characters.
       </answer>
       <question>
+        Who is Shigeru Miyamoto?
       </question>
     </module>
   </category>
@@ -113,7 +124,7 @@
   <!-- 2nd clue -->
       <module>
         <answer>
-          <img src="http://www.selftaughtguitarlessons.com/wp-content/uploads/2014/03/TrebleClef.gif"/>
+          <img src="http://www.clipartbest.com/cliparts/bcy/pEr/bcypErBgi.jpeg"/>
         </answer>
         <question>
           What is a Treble Clef?
@@ -233,55 +244,70 @@
  <!-- 4th clue -->
       <module>
         <answer>
+          This part of a computer stores all of the saved data.
         </answer>
         <question>
+          What is the Hard Drive?
         </question>
       </module>
  <!-- 5th clue -->
       <module>
         <answer>
+          This cell phone is said to be the best ever sold, but it gives the owner a surprise when they take home.
         </answer>
         <question>
+          What is the Samsung Galaxy S7 / Samsung Galaxy S7 Edge?
         </question>
       </module>
     </category>
   <!-- 6th category -->
     <category>
       <name>
+        That Doesn't Make Sense!
       </name>
  <!-- 1st clue -->
       <module>
         <answer>
+          Planes do this when they have to land an emergency landing.
         </answer>
         <question>
+          What is a crash land?
         </question>
       </module>
  <!-- 2nd clue -->
       <module>
         <answer>
+          The person who serves the people coming over.
         </answer>
         <question>
+          What is the Guest Host?
         </question>
       </module>
  <!-- 3rd clue -->
       <module>
         <answer>
+          The key signature has 4 sharps, but there's a Gb.
         </answer>
         <question>
+          What is a flattened sharp?
         </question>
       </module>
 <!-- 4th clue -->
       <module>
         <answer>
+          Liquid Oxygen, Liquid Nitrogen, Liquid Hydrogen.
         </answer>
         <question>
+          What are liquid gases?
         </question>
       </module>
  <!-- 5th clue -->
       <module>
         <answer>
+          I speak, but have no mouth. I hear, but have no ears. I see, but have no eyes.
         </answer>
         <question>
+          What is an iPhone?
         </question>
       </module>
     </category>

@@ -1,10 +1,10 @@
 <game-board>
   <!-- Set points for game-board -->
-  <money>$400</money>
-  <money>$800</money>
-  <money>$1200</money>
-  <money>$1600</money>
-  <money>$2000</money>
+  <points>$400</points>
+  <points>$800</points>
+  <points>$1200</points>
+  <points>$1600</points>
+  <points>$2000</points>
  <!-- 1st category -->
   <category>
     <name>
@@ -13,36 +13,46 @@
  <!-- 1st clue -->
     <module>
       <answer>
+        The past tense.
       </answer>
       <question>
+        What is the passé composé?
       </question>
     </module>
  <!-- 2nd clue -->
     <module>
       <answer>
+        A cross between the Imparfait and the Future Simple.
       </answer>
       <question>
+        What is the Conditionel?
       </question>
     </module>
  <!-- 3rd clue -->
     <module>
       <answer>
+        Even Dude Perfect couldn't beat this tense.
       </answer>
       <question>
+        What is the Plus-Que-Parfait?
       </question>
     </module>
  <!-- 4th clue -->
     <module>
       <answer>
+        Translate: Google Translate is absolute trash.
       </answer>
       <question>
+        Google Translate est absolument poubelle.
       </question>
     </module>
  <!-- 5th clue -->
     <module>
       <answer>
+        Translate: I'm only doing this for the money.
       </answer>
       <question>
+        Je fait ça seulement pour l'argent.
       </question>
     </module>
   </category>
@@ -174,7 +184,7 @@
  <!-- 3rd clue -->
       <module>
         <answer>
-          The which electromagnetic radiation is classified
+          The diagram which electromagnetic radiation is classified
         </answer>
         <question>
           What is the Electromagnetic Spectrum?
@@ -258,8 +268,10 @@
  <!-- 1st clue -->
       <module>
         <answer>
+          The only Nintendo console they sell in France is ...
         </answer>
         <question>
+          What is the Nintendo Wii?
         </question>
       </module>
  <!-- 2nd clue -->
@@ -292,8 +304,10 @@
  <!-- 5th clue -->
       <module>
         <answer>
+          When a person combines Germanium (Ge), Nickel (Ni), Uranium (U), and Sulfur (S).
         </answer>
         <question>
+          What is a GeNiUS?
         </question>
       </module>
     </category>
